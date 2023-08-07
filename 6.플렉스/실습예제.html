@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플렉스실습</title>
+    <style>
+      html,
+      body {
+        /* 초기화*/
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #bbb;
+        padding-bottom: 100px;
+      }
+      /* 1 */
+      .container {
+        max-width: 500px;
+        margin: 20px auto 0 auto;
+        background-color: white;
+        padding: 30px;
+      }
+      .form-row {
+        padding: 10px 0;
+        display: flex;
+      }
+      .form-row label {
+        padding-right: 10px;
+      }
+      .form-row input {
+        flex: 1;
+      }
+      /* 2 */
+      .column {
+        max-width: 1300px;
+        background-color: white;
+        margin: 40px auto 0 auto;
+        display: flex;
+      }
+      .main {
+        flex: 3;
+        order: 2;
+      }
+      .side {
+        flex: 1;
+        order: 1;
+      }
+      .side2 {
+        flex: 1;
+        order: 3;
+      }
+      .container3 {
+        max-width: 1400px;
+        margin: 40px auto 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .card {
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        /* flex비율대신에 %로 각각의 카드길이 */
+        flex-basis: 30%;
+      }
+      /* 선택:nth-child(번호)=선택의 번호번째 */
+      .card:nth-child(1) {
+        background-color: #c0dbe2;
+      }
+      .card:nth-child(2) {
+        background-color: #cdf1c3;
+      }
+      .card:nth-child(3) {
+        background-color: #ccb9ba;
+      }
+      /* 4 */
+      .container4 {
+        max-width: 1400px;
+        margin: 40px auto 0 auto;
+        display: flex;
+        background-color: white;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .fixed-size {
+        width: 150px;
+        height: 100px;
+        background-color: #990b47;
+        color: white;
+        line-height: 100px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+      /* 5 */
+      .container5 {
+        height: 400px;
+        max-width: 700px;
+        margin: 40px auto 0 auto;
+        background-color: #2a2a2a;
+        /* 플렉스로 가운데 정렬방법(부모 아래의 아이템이 가운데 정렬됨) */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .center {
+        color: white;
+        font-size: 50px;
+      }
+      /* 6 */
+      .container6 {
+        max-width: 900px;
+        margin: 20px auto;
+        display: flex;
+      }
+      .first {
+        flex: 1;
+        background-color: white;
+        padding: 20px;
+      }
+      .second {
+        background-color: yellow;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      .second-a {
+        background-color: #c0dbe2;
+        flex: 1;
+      }
+      .second-b {
+        background-color: #cdf1c3;
+        flex: 1;
+      }
+      .second-b:hover {
+        background-color: skyblue;
+        flex: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <div class="container">
+      <form>
+        <div class="form-now">
+          <label for="name">이름:</label>
+          <input type="text" id="name" />
+        </div>
+        <div class="form-row">
+          <label for="color">좋아하는 색:</label>
+          <input type="text" id="color" />
+        </div>
+      </form>
+    </div>
+    <!-- 2 -->
+    <div class="column">
+      <div class="main">
+        <h2>메인</h2>
+        <p>첫번째 문장입니다. 첫번째 문장입니다.</p>
+        <p>첫번째 문장입니다. 첫번째 문장입니다.</p>
+        <p>첫번째 문장입니다. 첫번째 문장입니다.</p>
+        <p>첫번째 문장입니다. 첫번째 문장입니다.</p>
+      </div>
+      <div class="side1">
+        <h3>사이드 원</h3>
+        <p>두번째 문장입니다. 두번째 문장입니다.</p>
+      </div>
+      <div class="side2">
+        <h3>사이드 투</h3>
+        <p>두번째 문장입니다. 두번째 문장입니다.</p>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="container3">
+      <div class="card">
+        <h4>카드1</h4>
+        <p>
+          첫번째 카드입니다. 첫번째 카드입니다. 첫번째 카드입니다. 첫번째
+          카드입니다.
+        </p>
+      </div>
+      <div class="card">
+        <h4>카드2</h4>
+        <p>
+          두번째 카드입니다. 두번째 카드입니다. 첫두번째 카드입니다. 두번째
+          카드입니다.
+        </p>
+      </div>
+      <div class="card">
+        <h4>카드3</h4>
+        <p>
+          세번째 카드입니다. 세번째 카드입니다. 세번째 카드입니다. 세번째
+          카드입니다.
+        </p>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="container4">
+      <div class="fixed-size">1</div>
+      <div class="fixed-size">2</div>
+      <div class="fixed-size">3</div>
+      <div class="fixed-size">4</div>
+      <div class="fixed-size">5</div>
+    </div>
+    <!-- 5 -->
+    <div class="container5">
+      <div class="center">가운데</div>
+    </div>
+    <!-- 6 -->
+    <div class="container6">
+      <div class="first">
+        <p>
+          아무글자 넣습니다.아무글자 넣습니다.아무글자 넣습니다.아무글자
+          넣습니다.아무글자 넣습니다.
+        </p>
+        <p>
+          아무글자 넣습니다.아무글자 넣습니다.아무글자 넣습니다.아무글자
+          넣습니다.아무글자 넣습니다.
+        </p>
+        <p>
+          아무글자 넣습니다.아무글자 넣습니다.아무글자 넣습니다.아무글자
+          넣습니다.아무글자 넣습니다.
+        </p>
+        <p>
+          아무글자 넣습니다.아무글자 넣습니다.아무글자 넣습니다.아무글자
+          넣습니다.아무글자 넣습니다.
+        </p>
+      </div>
+      <div class="second">
+        <div class="second-a">A</div>
+        <div class="second-b">B</div>
+      </div>
+    </div>
+  </body>
+</html>
